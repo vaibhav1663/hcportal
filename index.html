@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <modal-con class="overlay dark">
+        <modal class="loader small">
+            <svg md-loader stroke-width="5" viewBox="0 0 66 66">
+                <circle cx="33" cy="33" r="25" />
+            </svg>
+        </modal>
+    </modal-con>
+
+
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+
+            <img src="https://www.mind-spark.org/Mindspark-Monday/img/MS-22%20Logo-01.png">
+
+            <form id="form">
+                <div class="formbold-form-title">
+                    <h2 class="">HOSTEL ACCOMODATION PORTAL</h2>
+                    <p>
+
+                    </p>
+                </div>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="firstname" class="formbold-form-label">
+                            First name
+                        </label>
+                        <input type="text" name="firstname" id="firstname" class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <label for="lastname" class="formbold-form-label"> Last name </label>
+                        <input type="text" name="lastname" id="lastname" class="formbold-form-input" />
+                    </div>
+                </div>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="email" class="formbold-form-label"> Email </label>
+                        <input type="email" name="email" id="email" class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <label for="phone" class="formbold-form-label"> Phone number </label>
+                        <input type="text" name="phone" id="phone" class="formbold-form-input" />
+                    </div>
+                </div>
+                <div class="formbold-mb-3">
+                    <label for="aadhar" class="formbold-form-label">
+                        Aadhar Number
+                    </label>
+                    <input type="text" name="aadhar" id="aadhar" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="address" class="formbold-form-label">
+                        College Name
+                    </label>
+                    <input type="text" name="address" id="address" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="event" class="formbold-form-label"> Event </label>
+                        <input type="text" name="event" id="event" class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <label for="date" class="formbold-form-label"> Day Alloted for Event</label>
+                        <input type="number" name="date" id="date" class="formbold-form-input" />
+                    </div>
+                </div>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="nop" class="formbold-form-label"> Number of Participant </label>
+                        <input type="text" name="nop" id="nop" class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <label for="ticket" class="formbold-form-label"> Event Ticket Number </label>
+                        <input type="text" name="ticket" id="ticket" class="formbold-form-input" />
+
+                    </div>
+                </div>
+
+                <div class="formbold-checkbox-wrapper">
+                    <label for="supportCheckbox" class="formbold-checkbox-label">
+                        I agree to the defined
+                        <a href="#"> terms, conditions, and policies</a>
+                    </label>
+                </div>
+
+                <button class="formbold-btn" id="sub-btn">Register Now</button>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAptqmHqUXjv8zPF8i5E1lx46tPbfRNA3s",
+            authDomain: "haprocess-29ade.firebaseapp.com",
+            databaseURL: "https://haprocess-29ade-default-rtdb.firebaseio.com",
+            projectId: "haprocess-29ade",
+            storageBucket: "haprocess-29ade.appspot.com",
+            messagingSenderId: "539952006165",
+            appId: "1:539952006165:web:82e5370a9cbbcb2b14ba1c",
+            measurementId: "G-FGSHJBDEKG"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import { getDatabase, ref, get, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+
+        const db = getDatabase();
+
+        const fname = document.getElementById("firstname"),
+            lname = document.getElementById("lastname"),
+            email = document.getElementById("email"),
+            phone = document.getElementById("phone"),
+            adhar = document.getElementById("aadhar"),
+            clg = document.getElementById("address"),
+            event = document.getElementById("event"),
+            date = document.getElementById("date"),
+            nop = document.getElementById("nop"),
+            ticket = document.getElementById("ticket");
+
+        async function InsertData() {
+            loader.style.display ="block";
+            await set(ref(db, "People/" + adhar.value), {
+                Name: fname.value + " " + lname.value,
+                Email: email.value,
+                Phone: phone.value,
+                Adhar: adhar.value,
+                Clg: clg.value,
+                Event: event.value,
+                Day: date.value,
+                NumOfParticipants: nop.value,
+                TicketID: ticket.value
+            })
+                .then(() => {
+                    
+                    loader.style.display ="none";
+                    alert("Data added successfully");
+
+                })
+                .catch((error) => {
+                    loader.style.display ="none";
+                    alert(error);
+                });
+        }
+
+        function FindData() {
+            const dbref = ref(db);
+
+            get(child(dbref, "People/" + findID.value))
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        findName.innerHTML = "Name: " + snapshot.val().Name;
+                        findAge.innerHTML = "Age: " + snapshot.val().Age;
+                    } else {
+                        alert("No data found");
+                    }
+                })
+                .catch((error) => {
+                    alert(error)
+                })
+
+        }
+
+        function UpdateData() {
+            update(ref(db, "People/" + enterID.value), {
+                Name: enterName.value,
+                Age: enterAge.value
+            })
+                .then(() => {
+                    alert("Data updated successfully");
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        }
+        const insertBtn = document.getElementById('sub-btn');
+        insertBtn.addEventListener('click', InsertData);
+        const loader = document.querySelector(".overlay");
+        window.onload = loader.style.display ="none"
+
+    </script>
+
+</body>
+
+</html>

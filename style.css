@@ -1,0 +1,588 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #030317;
+    user-select: none;
+    background: linear-gradient(to right, #090025 0, #2f0028 100%);
+}
+
+.formbold-mb-3 {
+    margin-bottom: 15px;
+}
+
+.formbold-relative {
+    position: relative;
+}
+
+.formbold-opacity-0 {
+    opacity: 0;
+}
+
+.formbold-stroke-current {
+    stroke: currentColor;
+}
+
+#supportCheckbox:checked~div span {
+    opacity: 1;
+}
+
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    padding-top: 10px;
+}
+
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 750px;
+    width: 100%;
+    padding: 40px;
+    padding-top: 0px;
+}
+
+.formbold-form-wrapper img {
+    width: 70%;
+    display: flex;
+    margin: auto;
+    filter: invert(1);
+}
+
+.formbold-img {
+    margin-bottom: 45px;
+}
+
+.formbold-form-title {
+    margin-bottom: 30px;
+}
+
+.formbold-form-title h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #007FFF;
+    text-align: center;
+}
+
+.formbold-form-title p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+    margin-top: 12px;
+}
+
+.formbold-input-flex {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.formbold-input-flex>div {
+    width: 50%;
+}
+
+.formbold-form-input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+    font-weight: 500;
+    background: transparent;
+    font-size: 18px;
+    color: #FFFFFF;
+    outline: none;
+    resize: none;
+    font-family: 'Poppins';
+}
+
+.formbold-form-input:focus {
+    border-color: #007FFF;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-form-label {
+    color: #f4f4f4;
+    font-size: 17px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formbold-checkbox-label {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.formbold-checkbox-label a {
+    margin-left: 5px;
+    color: #007FFF;
+}
+
+.formbold-input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.formbold-checkbox-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    margin-top: 2px;
+    border: 0.7px solid #dde3ec;
+    border-radius: 3px;
+}
+
+#sub-btn {
+    font-size: 16px;
+    display: flex;
+    border-radius: 5px;
+    padding: 14px 25px;
+    margin: auto;
+    border: none;
+    font-weight: 500;
+    background-color: #007FFF;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 3px 10px 20px 0px rgb(35 100 210 / 30%);
+    color: #fff;
+}
+
+#sub-btn:hover {
+    background-color: #2364d2;
+    box-shadow: 5px 10px 20px 0px rgb(35 100 210 / 30%);
+}
+
+@media screen and (max-width: 580px) {
+    .formbold-form-wrapper {
+        padding: 0;
+    }
+
+    .formbold-main-wrapper {
+        padding: 20px;
+    }
+
+    .formbold-input-flex>div {
+        width: 100%;
+    }
+
+    .formbold-input-flex {
+        flex-direction: column;
+    }
+}
+
+svg[md-loader] {
+    -webkit-animation: rotate 2s linear infinite;
+    -moz-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    width: 35px;
+    vertical-align: middle;
+}
+
+svg[md-loader] circle {
+    fill: none;
+    stroke: #0091ea;
+    stroke-dasharray: 2, 155;
+    stroke-dashoffset: 0;
+    -webkit-animation: dash 1.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    -moz-animation: dash 1.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: dash 1.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@-moz-keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes dash {
+    0% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 122, 20;
+        stroke-dashoffset: -20;
+    }
+
+    100% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: -155;
+    }
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 122, 20;
+        stroke-dashoffset: -20;
+    }
+
+    100% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: -155;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 122, 20;
+        stroke-dashoffset: -20;
+    }
+
+    100% {
+        stroke-dasharray: 2, 155;
+        stroke-dashoffset: -155;
+    }
+}
+
+modal-con {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+modal-con>modal {
+    width: 350px;
+    height: 150px;
+    max-width: 85% !important;
+    color: #212121;
+    background: rgba(255, 255, 255, 0.8);
+    line-height: normal;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.1) !important;
+    pointer-events: auto !important;
+}
+
+modal-con>modal>header {
+    width: 88%;
+    height: 45px;
+    line-height: 35px;
+    margin: 12px auto 0px auto;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #212121;
+}
+
+modal-con>modal>main {
+    width: 88%;
+    height: auto;
+    font-size: 15px;
+    margin: 0px auto;
+    font-family: "Rubik", sans-serif;
+}
+
+modal-con>modal>main>input {
+    width: 100%;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1.5px solid #212121;
+    padding-bottom: 2px;
+    margin-top: 6px;
+    padding: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: transparent;
+}
+
+modal-con>modal>main>p {
+    font-size: 12px;
+    color: #212121;
+    margin-left: 6px;
+    position: relative;
+    top: -25px;
+}
+
+modal-con>modal>main>.md-input {
+    max-width: 305px;
+    margin-top: -10px;
+}
+
+modal-con>modal>action {
+    width: 100%;
+    height: 48px;
+    margin: 0px auto;
+    line-height: 48px;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+}
+
+modal-con>modal>action>button {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    font-weight: bold;
+    outline: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15px;
+    color: #0091ea;
+    margin-right: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+modal-con>modal.action {
+    width: 300px;
+    height: 120px;
+}
+
+modal-con>modal.loader {
+    width: 250px;
+    height: 95px;
+    text-align: center;
+}
+
+modal-con>modal.loader.small {
+    width: 50px;
+    height: 50px;
+}
+
+modal-con>modal.loader.small>svg {
+    position: relative;
+    top: 8px;
+}
+
+modal-con>modal.loader.medium {
+    width: 100px;
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+    color: #212121;
+}
+
+modal-con>modal.loader.medium>svg {
+    width: 50px;
+    height: 50px;
+}
+
+modal-con>modal.loader.medium>span {
+    position: relative;
+    top: 10px;
+    font-family: "Ubuntu", sans-serif;
+    color: inherit;
+}
+
+modal-con>modal.loader>header {
+    height: auto;
+    line-height: 30px;
+}
+
+modal-con>modal.loader>header>label {
+    font-size: 16px;
+}
+
+modal-con>modal.loader>main>div {
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+modal-con>modal.loader>main>div:nth-child(1) {
+    width: 40px;
+    text-align: center;
+}
+
+modal-con>modal.loader>main>div:nth-child(2) {
+    width: calc(100% - 45px);
+    text-indent: 10px;
+    font-family: "Rubik", sans-serif;
+}
+
+modal-con.dark>modal {
+    background: #212121;
+}
+
+modal-con.dark>modal>header,
+modal-con.dark>modal>main {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+modal-con.dark>modal.medium {
+    color: #fff;
+}
+
+modal-con.light>modal {
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1), 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+modal-con.light>modal>header,
+modal-con.light>modal>main {
+    color: #212121;
+}
+
+modal-con.overlay {
+    pointer-events: auto;
+    background: rgba(33, 33, 33, 0.6);
+}
+
+modal-con.overlay.light {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+modal-con.top>modal {
+    top: 3em;
+    bottom: auto !important;
+}
+
+modal-con.bottom>modal {
+    top: auto !important;
+    bottom: 3em;
+}
+
+modal-con.left>modal {
+    right: auto !important;
+    left: 3em;
+}
+
+modal-con.right>modal {
+    right: 3em;
+    left: auto !important;
+}
+
+@media screen and (max-width: 400px) {
+
+    modal-con.left,
+    modal-con.right {
+        margin: 0px auto;
+        right: 0px !important;
+        left: 0px !important;
+    }
+}
+
+.md-input {
+    width: 500px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 12px;
+}
+
+.md-input>input {
+    width: 100%;
+    background: none;
+    color: #222;
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    font-family: "Roboto", san-serif;
+    border-radius: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.md-input>input:focus {
+    outline: none;
+}
+
+.md-input>input:focus~label,
+.md-input>input:focus input:valid~label {
+    top: -50px;
+    left: 0px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+.md-input>input:focus~ :before,
+.md-input>input:focus~span:before {
+    width: 100% !important;
+}
+
+.md-input>input[type=password] {
+    letter-spacing: 0.3em;
+}
+
+.md-input>label {
+    color: #c6c6c6;
+    font-size: 18px;
+    font-weight: normal;
+    position: relative;
+    pointer-events: none;
+    left: 5px;
+    top: -30px;
+    transition: 300ms ease all;
+}
+
+.md-input>span {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.md-input>span:before {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: #2196f3;
+    transition: 300ms ease all;
+    left: 0%;
+}
+
+.md-input>p {
+    margin-top: -14px;
+    margin-left: 5px;
+    font-size: 13px;
+    color: colors("red");
+}
